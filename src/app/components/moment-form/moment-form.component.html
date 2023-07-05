@@ -1,15 +1,17 @@
 <form action="" method="post">
-    <div>
+    <div class="input-container">
+        <input type="text"  name="title" id="title" required autofocus>
         <label for="title">Título: </label>
-        <input type="text"  name="title" id="title" required>
     </div>
-    <div>
+    <div class="input-container">
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="O que aconteceu lá?" ></textarea>
         <label for="description">Descrição: </label>
-        <textarea name="description" id="description" cols="30" rows="10" placeholder="O que aconteceu lá?"></textarea>
     </div>
-    <div>
-        <label for="image">Imagem:</label>
+    <div class="input-container">
         <input type="file"  name="image" id="image" required>
+        <label for="image">Imagem:</label>
     </div>
-    <input type="submit" value="{{btnText}}">
+    <div class="input-container">
+        <input type="submit" value="{{btnText}}">
+    </div>
 </form>

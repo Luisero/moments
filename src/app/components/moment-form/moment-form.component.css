@@ -1,0 +1,72 @@
+
+form{
+    width: 20vw;
+    min-height: 60vh;
+    max-height: 70vh ;
+    margin: 10px auto;
+    background-color: rgb(216, 216, 216);
+    border-radius: 20px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+}
+
+
+form .input-container{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: left;
+    justify-content: left;
+
+    font-weight: bold;
+}
+
+
+
+.input-container input[type="text"]{
+    height: 1.5em;
+    border: none;
+    outline: none;
+    padding: .5em;
+    border-radius: 10px;
+}
+
+.input-container label{
+    transition-duration:.3s;
+}
+
+.input-container>input[type='text']:focus ~ label{
+    color: #e7bb1c;
+}
+
+.input-container>textarea:focus ~label{
+    color: #e7bb1c;
+}
+.input-container textarea{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: .5em;
+    resize: none;
+}
+
+
+.input-container input[type="submit"]{
+    width: 10em;
+    padding: .9em .2em;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #edc129;
+    transition-duration: .2s;
+}
+
+
+.input-container input[type="submit"]:hover{
+    background-color: #c29905;
+}
