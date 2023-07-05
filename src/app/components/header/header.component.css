@@ -11,13 +11,24 @@
 .navbar .logo-container{
     display: flex;
     align-items: center;
-    width: 30vw;
+    width: 12vw;
     justify-content: space-evenly;
 }
 
+.navbar> a{
+    text-decoration: none;
+}
 .navbar .logo-container h1{
     margin: 0;
-    color: rgb(185, 185, 6);
+    color: #dec129;
+}
+.logo-container img{
+    width: 3vw;
+    transition-duration: .5s;
+}
+
+.logo-container:hover img{
+    transform: rotate(-30deg);
 }
 
 .navbar .nav-list{
@@ -32,5 +43,5 @@
     text-decoration: none;
     cursor: pointer;
     padding: .7em .4em;
-    color: rgb(185, 185, 6);
+    color: #dec129;
 }
