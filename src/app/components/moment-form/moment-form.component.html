@@ -1,14 +1,23 @@
-<form action="" method="post">
+<form action="" method="post" (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
     <div class="input-container">
-        <input type="text"  name="title" id="title" required autofocus>
+        <div *ngIf="title.invalid && formDir.submitted" class="validation-error">
+            <p>O titulo é obrigatorio</p>
+        </div>
+        <input type="text"  name="title" id="title" formControlName="title" required autofocus>
         <label for="title">Título: </label>
     </div>
     <div class="input-container">
-        <textarea name="description" id="description" cols="30" rows="10" placeholder="O que aconteceu lá?" ></textarea>
+        <div *ngIf="description.invalid && formDir.submitted" class="validation-error">
+            <p>A descrição é obrigatoria</p>
+        </div>
+        <textarea name="description" id="description" formControlName="description" cols="30" rows="10" placeholder="O que aconteceu lá?" ></textarea>
         <label for="description">Descrição: </label>
     </div>
     <div class="input-container">
-        <input type="file"  name="image" id="image" required>
+        <div *ngIf="image.invalid && formDir.submitted" class="validation-error">
+            <p>A imagem é obrigatoria</p>
+        </div>
+        <input type="file"  name="image" id="image" required formControlName="image">
         <label for="image">Imagem:</label>
     </div>
     <div class="input-container">
