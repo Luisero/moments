@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div class="moments-container" >
+    <div class="moment" *ngFor="let moment of allMoments">
+        <a href="" class="moment-link">
+
+            <app-moment [moment]="moment"></app-moment>
+        </a>
+    </div>
+</div>

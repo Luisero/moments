@@ -1,0 +1,36 @@
+
+.moment {
+    border-radius: 50px;
+    background: transparent;
+    box-shadow: 20px 20px 26px #cecece59,
+        -20px -20px 26px #f2f2f260;
+
+    width: 30vw;
+    padding: 1em 1.5em 1.5em 1.5em;
+    transition-duration: .4s;
+    margin: 10px 0;
+}
+
+.moment:hover{
+    box-shadow: 20px 20px 26px #cececebb,
+    -20px -20px 26px #f2f2f2c4;
+
+}
+
+.moment .moment-header hr{
+    color: gray;
+}
+.moment .image-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moment img{
+    
+    object-fit: cover;
+    border-radius: 10px;
+    max-height: 30vh;
+    
+}
