@@ -17,7 +17,7 @@
         <div *ngIf="image.invalid && formDir.submitted" class="validation-error">
             <p>A imagem é obrigatoria</p>
         </div>
-        <input type="file"  name="image" id="image" required formControlName="image">
+        <input type="file"   name="image" id="image" required  (change)="onFileSelected($event)">
         <label for="image">Imagem:</label>
     </div>
     <div class="input-container">
