@@ -15,7 +15,7 @@ export class NewMomentComponent {
   async createHandler(moment: Moment){
     const formData: FormData = new FormData();
 
-    formData.append('title', moment.description);
+    formData.append('title', moment.title);
     formData.append('description',moment.description);
 
     if(moment.image){
