@@ -1,0 +1,23 @@
+<div class="moment-container" *ngIf="moment">
+    <div class="moment-header">
+        <h1>{{ moment.title }}</h1>
+    </div>
+
+    <div class="moment-body">
+        <div class="image-container">
+            <img src="{{this.apiUrl}}uploads/{{moment.image}}" alt="">
+        </div>
+
+        <p>{{moment.description}}</p>
+        <span>Criado em: {{moment.created_at | date: "dd.MM.yyyy hh:mm" }}</span>
+    </div>
+
+</div>
+
+<section class="coments-section">
+    <h3>Comentários: </h3>
+
+    <ul>
+        <li></li>
+    </ul>
+</section>

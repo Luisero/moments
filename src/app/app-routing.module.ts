@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { NewMomentComponent } from './components/pages/new-moment/new-moment.component';
+import { MomentPageComponent } from './components/pages/moment-page/moment-page.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'moments/new',
     component:NewMomentComponent
+  },
+  {
+    path:'moment/:id',
+    component:MomentPageComponent
   }
 ];
 

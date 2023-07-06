@@ -23,6 +23,9 @@ export class MomentService {
     return this.http.post<FormData>(this.apiUrl, formData);
   }
 
+  getMomentById(id: number): Observable<Response<Moment>>{
+    return this.http.get<Response<Moment>>(`${this.apiUrl}/${id}`);
+  }
 
 
 }

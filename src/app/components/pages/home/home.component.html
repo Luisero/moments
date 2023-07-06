@@ -1,6 +1,6 @@
 <div class="moments-container" >
     <div class="moment" *ngFor="let moment of allMoments">
-        <a href="" class="moment-link">
+        <a href="" class="moment-link" routerLink="/moment/{{moment.id}}">
 
             <app-moment [moment]="moment"></app-moment>
         </a>
