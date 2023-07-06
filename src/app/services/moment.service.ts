@@ -20,7 +20,7 @@ export class MomentService {
   }
 
   createMoment(formData: FormData): Observable<FormData>{
-    return this.http.post<FormData>(this.apiUrl+"api", formData);
+    return this.http.post<FormData>(this.apiUrl, formData);
   }
 
 
