@@ -1,0 +1,55 @@
+
+@keyframes openMessage {
+    0%{
+        top: -5%;
+        opacity: .1;
+        border-radius: 50%;
+    }
+
+    50%{
+        
+        border-radius: 20px;
+    }
+
+    100%{
+        top: 4%;
+    }
+}
+
+.message{
+    background-color: rgb(201, 201, 201);
+    border-radius: 20px;
+    padding: 10px;
+    opacity: .9;
+    animation: openMessage .3s ease-in-out;
+    height: 20vh;
+    width: 50vw;
+
+    position: fixed;
+
+    left: 50%;
+    top: 4%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.message .message-header{
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: space-between;
+    
+}
+
+
+.message button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+}
+
+.message p{
+    text-align: center;
+}
