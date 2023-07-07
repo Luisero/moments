@@ -30,6 +30,45 @@
     border-radius: 10px;
 }
 
+.moment-footer{
+    max-width: 30vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.actions-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5vh;
+}
+.actions-container a{
+    transition-duration: .5s;
+    padding: 1em .5em;
+    transition-duration: .4s;
+}
+
+.actions-container a:hover{
+    scale: 1.05;    
+}
+
+.actions-container a#edit-btn{
+    color: darkcyan;
+    
+}
+
+#remove-btn{
+    color: tomato;
+    cursor: pointer;
+    width: 5em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 
 section.coments-section{
@@ -44,3 +83,5 @@ section.coments-section{
 section.coments-section h3{
     
 }
+
+

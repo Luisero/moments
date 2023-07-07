@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from 'src/app/models/Moment';
 import { MomentService } from 'src/app/services/moment.service';
 import { environment } from 'src/app/environments/environment';
-
+import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Coment } from 'src/app/models/Coment';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-moment-page',
@@ -13,14 +15,32 @@ import { environment } from 'src/app/environments/environment';
 export class MomentPageComponent implements OnInit {
   moment_id!: number;
   moment!: Moment;
+  coments: Coment[] = [];
+  faEdit = faEdit;
+  faTimes = faTimes;
 
   public apiUrl: string = environment.baseApiUrl;
 
   constructor(
     private route: ActivatedRoute,
-    private momentsService: MomentService
+    private momentsService: MomentService,
+    private messagService: MessageService,
+    private router: Router
   ){
 
+  }
+  
+  removeHandler(moment_id: number): void {
+    try{
+
+      this.momentsService.removeMomentById(moment_id).subscribe()
+      this.messagService.addMessage("Momento excluido com sucesso!")
+    }
+    catch(e){
+      this.messagService.addMessage("Não foi possível excluir esse registro.")
+    }
+
+    this.router.navigate(["/"]);
   }
   
   ngOnInit(): void {

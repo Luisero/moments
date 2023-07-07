@@ -1,3 +1,4 @@
+<app-messages></app-messages>
 <div class="moment-container" *ngIf="moment">
     <div class="moment-header">
         <h1>{{ moment.title }}</h1>
@@ -12,12 +13,26 @@
         <span>Criado em: {{moment.created_at | date: "dd.MM.yyyy hh:mm" }}</span>
     </div>
 
+    <div class="moment-footer">
+        <h4>Ações</h4>
+        <div class="actions-container">
+            <a href="/moment/edit/{{ moment_id }}" id="edit-btn" >
+                Editar
+                <fa-icon [icon]="faEdit"></fa-icon>
+            </a>
+            <a id="remove-btn" (click)="removeHandler(moment_id)">
+                <p>Excluir</p>
+                <fa-icon [icon]="faTimes"></fa-icon>
+            </a>
+        </div>
+    </div>
+
 </div>
 
 <section class="coments-section">
-    <h3>Comentários: </h3>
+    <h3>Comentários: ({{coments.length}})</h3>
 
     <ul>
-        <li></li>
+         
     </ul>
 </section>
