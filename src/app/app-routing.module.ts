@@ -4,6 +4,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { NewMomentComponent } from './components/pages/new-moment/new-moment.component';
 import { MomentPageComponent } from './components/pages/moment-page/moment-page.component';
+import { EditMomentComponent } from './components/pages/edit-moment/edit-moment.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'moment/:id',
     component:MomentPageComponent
+  },
+  {
+    path:'moment/edit/:id',
+    component: EditMomentComponent 
   }
 ];
 

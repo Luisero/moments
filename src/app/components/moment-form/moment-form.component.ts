@@ -12,12 +12,13 @@ export class MomentFormComponent implements OnInit {
 
   @Input() btnText: string = 'Cadastrar evento';
   momentForm!: FormGroup;
-  
+  @Input() momentData: Moment | null = null;
+
   ngOnInit(): void {
     this.momentForm = new FormGroup({
       id: new FormControl(''),
-      title: new FormControl('',[Validators.required]),
-      description: new FormControl('', [Validators.required]),
+      title: new FormControl(this.momentData ? this.momentData.title : '',[Validators.required]),
+      description: new FormControl(this.momentData ? this.momentData.description : '', [Validators.required]),
       image: new FormControl('')
     })
   }
@@ -41,6 +42,7 @@ export class MomentFormComponent implements OnInit {
       image: file
     })
   }
+
 
   submit(): void{
     if(this.momentForm.invalid){

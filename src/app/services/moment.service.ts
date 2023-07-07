@@ -31,5 +31,7 @@ export class MomentService {
     return this.http.delete<Response<Moment>>(`${this.apiUrl}/${id}`)
   }
 
-
+  updateMoment(id: number, formData: FormData): Observable<FormData>{
+    return this.http.put<FormData>(`${this.apiUrl}/${id}`, formData);
+  }
 }

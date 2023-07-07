@@ -1,0 +1,5 @@
+<div class="moment-edit-container" *ngIf="moment">
+    <h2 [ngStyle]="{'text-align':'center'}">Editando o momento (<span [ngStyle]="{'font-weight':'300'}">{{moment.title}}</span>)</h2>
+
+    <app-moment-form [momentData]="moment" [btnText]="btn_text" (onSubmit)="editHandler($event)"></app-moment-form>
+</div>
