@@ -1,22 +1,22 @@
 <app-messages></app-messages>
-<div class="moment-container" *ngIf="moment">
+<div class="moment-container" *ngIf="momment">
     <div class="moment-header">
-        <h1>{{ moment.title }}</h1>
+        <h1>{{ momment.title }}</h1>
     </div>
 
     <div class="moment-body">
         <div class="image-container">
-            <img src="{{this.apiUrl}}uploads/{{moment.image}}" alt="">
+            <img src="{{this.apiUrl}}uploads/{{momment.image}}" alt="">
         </div>
 
-        <p>{{moment.description}}</p>
-        <span>Criado em: {{moment.created_at | date: "dd.MM.yyyy hh:mm" }}</span>
+        <p>{{momment.description}}</p>
+        <span>Criado em: {{momment.created_at | date: "dd.MM.yyyy hh:mm" }}</span>
     </div>
 
     <div class="moment-footer">
         <h4>Ações</h4>
         <div class="actions-container">
-            <a routerLink="/moment/edit/{{ moment_id }}" id="edit-btn" >
+            <a routerLink="/moment/edit/{{ moment_id }}" id="edit-btn">
                 Editar
                 <fa-icon [icon]="faEdit"></fa-icon>
             </a>
@@ -30,9 +30,40 @@
 </div>
 
 <section class="coments-section">
-    <h3>Comentários: ({{coments.length}})</h3>
+    <h3>Comentários: ({{momment.comments ? momment.comments.length : 0}})</h3>
 
-    <ul>
-         
-    </ul>
+    <div class="coments-list-container" *ngIf="momment.comments!.length > 0 else noComents">
+
+        <ul *ngFor="let comment of momment.comments" class="coment-list">
+            <li class="coment-container">
+                <p class="coment-author">Por: <span>{{comment.username}}</span></p>
+                <p class="coment-text">{{comment.text}}</p>
+            </li>
+
+        </ul>
+    </div>
+    <ng-template #noComents>
+      <span>Este momento não possui comentários.</span>
+    </ng-template>
+
+  <div class="form-container">
+    <form action="/" method="post" [formGroup]="commentForm" #formDir='ngForm' (ngSubmit)="onSubmit($event)">
+      <div class="title-form-container">
+        <h3>Deixe seu comentário aqui</h3>
+      </div>
+      <div class="input-container">
+        <textarea formControlName="text" name="coment" id="comment-input" cols="60" rows="4" placeholder="Adicione um comentário" required></textarea>
+        <div *ngIf="text.invalid && formDir.submitted" class="validation-error">
+          <p>O texto é obrigatorio</p>
+        </div>
+      </div>
+      <div class="input-container">
+        <input formControlName="username" type="text" name="username" id="username-input" placeholder="Adicione seu nome de usuário" required>
+        <div *ngIf="username.invalid && formDir.submitted" class="validation-error">
+          <p>O nome de usuário é obrigatorio</p>
+        </div>
+      </div>
+      <input type="submit" value="Comentar">
+    </form>
+  </div>
 </section>

@@ -47,18 +47,17 @@
     height: 5vh;
 }
 .actions-container a{
-    transition-duration: .5s;
     padding: 1em .5em;
     transition-duration: .4s;
 }
 
 .actions-container a:hover{
-    scale: 1.05;    
+    scale: 1.05;
 }
 
 .actions-container a#edit-btn{
     color: darkcyan;
-    
+
 }
 
 #remove-btn{
@@ -77,11 +76,67 @@ section.coments-section{
     display: flex;
     flex-direction: column;
 
-    align-items: left;
 }
 
 section.coments-section h3{
-    
+
+}
+div.form-container{
+  padding: 5vh 0 7vh;
+
+}
+textarea#comment-input{
+  padding: .6em .4em;
+  resize: none;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #d2d5d5;
+  margin-bottom: .7em;
+}
+#username-input{
+  padding: .6em .4em;
+  resize: none;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: #d2d5d5;
+  margin-bottom: .7em;
+  min-width: 15vw;
+}
+
+input[type='submit']{
+  padding: .6em 1.5em;
+
+  border-radius: 2em;
+  border: none;
+  outline: none;
+  background: #dec129;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+
+input[type='submit']:hover{
+  background: #d2b205;
 }
 
 
+form .validation-error p{
+  font-size: .8em;
+  font-weight: normal;
+  color: tomato;
+}
+
+.coment-list{
+  list-style-type: none;
+}
+
+.coment-container{
+  background: #e3e3e3;
+  padding: .5em .8em;
+  border-radius: 10px;
+}
+
+.coment-container .coment-author{
+  font-size: .8em;
+}

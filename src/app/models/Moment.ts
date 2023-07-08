@@ -1,4 +1,4 @@
-import { Coment } from "./Coment";
+import { Comment } from "./Comment";
 
 export interface Moment{
     id?: number;
@@ -7,5 +7,5 @@ export interface Moment{
     image: string,
     created_at?: string,
     updated_at?: string,
-    comment?: Coment[]
+    comments?: Comment[]
 }
